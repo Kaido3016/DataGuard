@@ -109,6 +109,10 @@ The repository does **not** claim a production PII detection accuracy such as "9
 
 This is intentional: **measured performance is more valuable than an unverified benchmark claim.**
 
+### Synthetic benchmark interpretation
+
+Synthetic PII benchmarks are intended for reproducible regression testing and controlled edge-case coverage, not as a proxy for real-world accuracy. Results should be reported by entity type, language, and difficulty, with support counts, documented span-matching rules, and uncertainty. Template leakage, generator bias, artificial prevalence, annotation coupling, and real-world distribution shift limit generalization. See [Synthetic PII benchmarks: design, reporting, and limits of generalization](docs/SYNTHETIC_BENCHMARKS_AND_GENERALIZATION.md) for the evaluation protocol and release checklist.
+
 ## Security & privacy
 
 Security is treated as a system property rather than a prompt or model feature.
