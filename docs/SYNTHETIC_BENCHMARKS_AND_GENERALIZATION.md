@@ -4,7 +4,7 @@
 
 This document defines how DataGuard's synthetic PII benchmark should be constructed and interpreted. Synthetic data is useful for repeatable regression tests, edge-case coverage, and testing known expected outputs without exposing real personal information. It is **not, by itself, evidence of real-world detection accuracy**.
 
-Do not report benchmark scores as production precision, recall, F1, legal compliance, or suitability for government use. Results must identify the dataset version, detector/model version, configuration, scoring rules, and run date. If those artifacts are unavailable, report the result as unverified rather than reconstructing it from memory.
+Do not report benchmark scores as production precision, recall, F1, legal compliance, or suitability for government use. Results must identify the dataset version, detector/model version, configuration, scoring rules, and run date. If those artifacts are unavailable, report the result as unverified rather than reconstructing it from memory.\n\nThe current executable `dataguard.evaluation.pii_benchmark` is intentionally narrower than the full protocol below: it scores **document-level label presence**, not entity spans. Run it with `python -m dataguard.evaluation.pii_benchmark`. Its held-out cases are hand-authored and separated by declared template-group metadata; this is a useful regression split, not an independently validated generalization test. The report includes per-class and micro metrics, split counts, and explicit limitations.
 
 ## 1. Improve the synthetic benchmark
 
