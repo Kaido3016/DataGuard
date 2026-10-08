@@ -223,7 +223,8 @@ def evaluate(cases: Iterable[Case] = CASES) -> dict[str, object]:
         },
         "limitations": [
             "Synthetic, hand-authored cases; not representative deployment data.",
-            "Document-label presence scoring; entity spans, overlaps, and normalization are not evaluated.",
+            "Document-label presence scoring; entity spans, overlaps, "
+            "and normalization are not evaluated.",
             "Held-out template groups are separated by declared metadata, "
             "not independently audited.",
             "Precision depends on real-world PII prevalence and may differ in production.",
