@@ -28,65 +28,65 @@ CASES = (
         "Nom: Alice Tremblay\nCourriel: alice@example.com",
         frozenset({"PERSON", "EMAIL"}),
         "development",
-        "label_name_email",
+        "field_labeled",
         "fr-CA",
         "canonical",
     ),
     Case(
         "dev-002", "Téléphone: +1 514-555-0199", frozenset({"PHONE"}),
-        "development", "label_phone", "fr-CA", "canonical",
+        "development", "field_labeled", "fr-CA", "canonical",
     ),
     Case(
         "dev-003", "NAS: 123-456-789", frozenset({"SOCIAL_INSURANCE_NUMBER"}),
-        "development", "label_nas", "fr-CA", "canonical",
+        "development", "field_labeled", "fr-CA", "canonical",
     ),
     Case(
         "dev-004", "RAMQ: ABCE 12345678", frozenset({"HEALTH_INSURANCE_ID"}),
-        "development", "label_ramq", "fr-CA", "canonical",
+        "development", "field_labeled", "fr-CA", "canonical",
     ),
     Case(
         "dev-005", "Adresse: 123 Rue Exemple, Montréal", frozenset({"ADDRESS"}),
-        "development", "label_address", "fr-CA", "canonical",
+        "development", "field_labeled", "fr-CA", "canonical",
     ),
     Case(
         "dev-006", "IP: 192.0.2.10", frozenset({"IP_ADDRESS"}),
-        "development", "label_ip", "fr-CA", "canonical",
+        "development", "field_labeled", "fr-CA", "canonical",
     ),
     Case(
         "dev-007", "Diagnostic: condition fictive", frozenset({"HEALTH_INFORMATION"}),
-        "development", "label_health", "fr-CA", "canonical",
+        "development", "field_labeled", "fr-CA", "canonical",
     ),
     Case(
         "dev-008", "Date de naissance: 1985-04-12", frozenset({"DATE_OF_BIRTH"}),
-        "development", "label_dob", "fr-CA", "canonical",
+        "development", "field_labeled", "fr-CA", "canonical",
     ),
     Case(
         "dev-009", "Réunion à Montréal demain à 10 h.", frozenset(),
-        "development", "plain_meeting", "fr-CA", "hard_negative",
+        "development", "plain_negative", "fr-CA", "hard_negative",
     ),
     Case(
         "dev-010", "Le dossier contient trois lignes sans identifiant.", frozenset(),
-        "development", "plain_dossier", "fr-CA", "easy_negative",
+        "development", "plain_negative", "fr-CA", "easy_negative",
     ),
     Case(
         "dev-011", "Référence de commande: 123-456-7890", frozenset(),
-        "development", "order_reference", "fr-CA", "hard_negative",
+        "development", "numeric_reference", "fr-CA", "hard_negative",
     ),
     Case(
         "dev-012", "Le numéro de lot est 192.0.2.999.", frozenset(),
-        "development", "invalid_ip", "fr-CA", "hard_negative",
+        "development", "numeric_reference", "fr-CA", "hard_negative",
     ),
     Case(
         "dev-013", "Contact: service@example.org", frozenset({"EMAIL"}),
-        "development", "label_contact_email", "en-CA", "canonical",
+        "development", "field_labeled", "en-CA", "canonical",
     ),
     Case(
         "dev-014", "Carte de crédit fictive: 4111 1111 1111 1111",
-        frozenset({"CREDIT_CARD"}), "development", "label_card", "fr-CA", "canonical",
+        frozenset({"CREDIT_CARD"}), "development", "field_labeled", "fr-CA", "canonical",
     ),
     Case(
         "dev-015", "Passport: AB1234567", frozenset({"PASSPORT"}),
-        "development", "label_passport", "en-CA", "canonical",
+        "development", "field_labeled", "en-CA", "canonical",
     ),
     Case(
         "test-001", "Pour toute question, écrire à contact+demo@example.org.",
