@@ -1,0 +1,39 @@
+:root {
+  --font: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, "Liberation Mono", monospace;
+
+  /* Surfaces */
+  --bg: #f4f6fb;
+  --surface: #ffffff;
+  --surface-2: #f8fafc;
+  --border: #dde3ee;
+  --border-strong: #c3ccdc;
+
+  /* Text */
+  --text: #0f172a;
+  --text-2: #334155;
+  --muted: #55627a;
+
+  /* Brand */
+  --navy-950: #0b1226;
+  --navy-900: #0f1830;
+  --navy-800: #1b2745;
+  --hero: #14215a;
+  --blue: #2563eb;
+  --blue-700: #1d4ed8;
+  --blue-50: #eff4ff;
+  --blue-100: #dbe6fe;
+  --focus: #2563eb;
+
+  /* Risk: solid / text / background / border (text colours meet 4.5:1 on their backgrounds) */
+  --crit: #b91c1c; --crit-text: #991b1b; --crit-bg: #fef2f2; --crit-border: #fecaca;
+  --high: #c2410c; --high-text: #9a3412; --high-bg: #fff7ed; --high-border: #fed7aa;
+  --mod: #d97706;  --mod-text: #854d0e;  --mod-bg: #fffbeb;  --mod-border: #fde68a;
+  --low: #15803d;  --low-text: #166534;  --low-bg: #f0fdf4;  --low-border: #bbf7d0;
+
+  --radius: 10px;
+  --radius-sm: 7px;
+  --shadow: 0 1px 2px rgb(15 23 42 / 6%), 0 1px 1px rgb(15 23 42 / 4%);
+  --shadow-lg: 0 20px 50px rgb(15 23 42 / 25%);
+  --sidebar-w: 248px;
+}

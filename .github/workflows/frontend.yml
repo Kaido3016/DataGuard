@@ -1,0 +1,45 @@
+name: DataGuard Frontend
+
+# Separate from quality.yml on purpose: quality.yml currently fails YAML parsing (pre-existing defect in the
+# Docker integration job, line ~128), which would prevent any job in that file from running.
+on:
+  push:
+    branches: [main, "production/**"]
+    paths: ["frontend/**", ".github/workflows/frontend.yml"]
+  pull_request:
+    paths: ["frontend/**", ".github/workflows/frontend.yml"]
+
+permissions:
+  contents: read
+
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      # No package-lock.json is committed yet (it could not be generated without registry access).
+      # After the first `npm install`, commit the lockfile, switch this step to `npm ci` and enable
+      # setup-node's `cache: npm` with `cache-dependency-path: frontend/package-lock.json`.
+      - name: Install
+        run: npm install --no-audit --no-fund
+      - name: Type check (strict)
+        run: npm run typecheck
+      - name: Lint
+        run: npm run lint
+      - name: Unit tests
+        run: npm test
+      - name: Production build
+        run: npm run build
+      - name: Production output must not contain demo data
+        run: |
+          if grep -rEl "demo-organization|Customer export \(synthetic\)|createDemoWorkspace" dist; then
+            echo "Synthetic demo code found in production build" >&2
+            exit 1
+          fi
