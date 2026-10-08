@@ -42,7 +42,8 @@ def test_held_out_cases_do_not_reuse_declared_template_groups() -> None:
 def test_benchmark_contains_hard_negatives_and_multiple_locales() -> None:
     assert any(case.difficulty == "hard_negative" and not case.expected for case in CASES)
     assert {"fr-CA", "en-CA"} <= {case.language for case in CASES}
-    assert len({case.template_group for case in CASES}) == len(CASES)
+    assert len({case.case_id for case in CASES}) == len(CASES)
+    assert len({case.template_group for case in CASES}) < len(CASES)
 
 
 def test_empty_metric_denominators_are_not_reported_as_perfect_scores() -> None:
